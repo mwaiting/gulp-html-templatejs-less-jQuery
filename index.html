@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>测试页面</title>
+		@@include('views/meta.html')
+		@@include('views/style.html')
+		<link rel="stylesheet" type="text/css" href="css/module/index.css"/>
+	</head>
+	<body>
+		@@include('views/header.html', {
+			title: '头部组件'
+		})
+		<div class="swiper-box" id="swiperDom">
+			<div class="swiper-container">
+				<div class="swiper-wrapper" id="swiperWrapper">
+					<script id="tpl" type="text/html">
+						<%for(var i = 0; i < list.length; i++) {%>
+							<%var item = list[i]%>
+							<div class="swiper-slide">
+								<img src="<%:=item.url%>" alt="">
+							</div>
+						<%}%>
+					</script>
+				</div>
+			</div>
+			<span class="prev-btn">
+				<img class="img" src="./img/jiantou_left.png" >
+			</span>
+			<span class="next-btn">
+				<img class="img" src="./img/jiantou_right.png" >
+			</span>
+		</div>
+		<a href="map.html"></a>
+		@@include('views/script.html')
+		<script src="js/lib/template.js"></script>
+		<script src="js/module/index.js"></script>
+	</body>
+</html>
